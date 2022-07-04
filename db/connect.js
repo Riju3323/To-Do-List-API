@@ -10,8 +10,8 @@ client.connect(err => {
   client.close();
 });
 
-mongoose.connect(uri).then(() => {
-  console.log("Connected to DataBase")
-}).catch((err) => {
-  console.log(err)
-});
+const connectDB = (url) => {
+  return mongoose.connect(uri);
+}
+
+module.exports = connectDB;
