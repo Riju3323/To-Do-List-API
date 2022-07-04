@@ -4,7 +4,13 @@ const app = express;
 const router = express.Router();
 
 
-const {getAllTasks, createTask, getTask, updateTask, delTask} = require('../controllers/tasks.js')
+const {
+  getAllTasks, 
+  createTask, 
+  getTask, 
+  updateTask, 
+  delTask,
+} = require('../controllers/tasks')
 
 
 // const getAllTask = ((req,res) =>{

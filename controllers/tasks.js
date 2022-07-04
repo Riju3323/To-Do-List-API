@@ -1,11 +1,11 @@
 const { model } = require("mongoose");
 
 const getAllTasks = (req,res) => {
-  res.send("Hello Friends");
+  res.send("Get Tasks");
 }
 
 const createTask = ((req,res) => {
-  res.json(req.body)
+  res.json(req.body);
 });
 
 const getTask = ((req,res) => {
