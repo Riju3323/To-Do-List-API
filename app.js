@@ -5,19 +5,14 @@ const tasks = require('./routes/tasks');
 const connectDB = require('./db/connect');
 require('dotenv').config();
 
+
+app.use(express.static('/public'));
 app.use(express.json());
 
-//page routes
+app.use('/api/v1/tasks',tasks);
 
-app.get('/hello',(req,res)=>{
-  res.send('Welcome to your Task Manager!!')
-});
 
-app.use('/api/v1/tasks',tasks)
-
-//port
-
-const port = 4000;
+const port = 3000;
 
 const start = async () => {
   try {
