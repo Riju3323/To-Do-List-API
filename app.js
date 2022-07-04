@@ -1,9 +1,9 @@
 //basic  
 const express = require('express');
 const app = express();
-const tasks = require('./routes/tasks.js');
+const tasks = require('./routes/tasks');
 const connectDB = require('./db/connect');
-require('dotenv');
+require('dotenv').config();
 
 app.use(express.json());
 
@@ -21,7 +21,7 @@ const port = 4000;
 
 const start = async () => {
   try {
-    await connectDB(process.env.MongoURI);
+    await connectDB(process.env.mongouri);
     app.listen(port, console.log(`Server is listening on Port ${port}!!`)) 
   } catch (error) {
     console.log(error);

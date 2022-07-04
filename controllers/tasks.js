@@ -1,4 +1,5 @@
 const { model } = require("mongoose");
+const Task = require('../models/task');
 
 const getAllTasks = (req,res) => {
   res.send("Get Tasks");
