@@ -17,12 +17,12 @@ app.use('/api/v1/tasks', tasks);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
-const port = process.env.PORT || 3000;
+let port = process.env.PORT || 3000;
 
 const start = async () => {
   try {
     await connectDB(process.env.mongolink);
-    app.listen(port, () =>
+    app.listen(process.env.PORT, () =>
       console.log(`Server is listening on port ${port}...`)
     );
   } catch (error) {
