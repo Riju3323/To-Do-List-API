@@ -11,7 +11,7 @@ const showTasks = async () => {
       data: { tasks },
     } = await axios.get('/api/v1/tasks')
     if (tasks.length < 1) {
-      tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>'
+      tasksDOM.innerHTML = '<h5 class="empty-list">To Do List Currently Empty<br>Add Some Tasks..</h5>'
       loadingDOM.style.visibility = 'hidden'
       return
     }
@@ -21,11 +21,9 @@ const showTasks = async () => {
         return `<div class="single-task ${completed && 'task-completed'}">
 <h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
 <div class="task-links">
-<!-- edit link -->
 <a href="task.html?id=${taskID}"  class="edit-link">
 <i class="fas fa-edit"></i>
 </a>
-<!-- delete btn -->
 <button type="button" class="delete-btn" data-id="${taskID}">
 <i class="fas fa-trash"></i>
 </button>
@@ -36,14 +34,12 @@ const showTasks = async () => {
     tasksDOM.innerHTML = allTasks
   } catch (error) {
     tasksDOM.innerHTML =
-      '<h5 class="empty-list">There was an error, please try later....</h5>'
+      '<h5 class="empty-list">We have run into some errors. Please try again later!!</h5>'
   }
   loadingDOM.style.visibility = 'hidden'
 }
 
 showTasks()
-
-// delete task /api/tasks/:id
 
 tasksDOM.addEventListener('click', async (e) => {
   const el = e.target
@@ -60,8 +56,6 @@ tasksDOM.addEventListener('click', async (e) => {
   loadingDOM.style.visibility = 'hidden'
 })
 
-// form
-
 formDOM.addEventListener('submit', async (e) => {
   e.preventDefault()
   const name = taskInputDOM.value
@@ -71,14 +65,14 @@ formDOM.addEventListener('submit', async (e) => {
     showTasks()
     taskInputDOM.value = ''
     formAlertDOM.style.display = 'block'
-    formAlertDOM.textContent = `success, task added`
+    formAlertDOM.textContent = `Task Added`
     formAlertDOM.classList.add('text-success')
   } catch (error) {
     formAlertDOM.style.display = 'block'
-    formAlertDOM.innerHTML = `error, please try again`
+    formAlertDOM.innerHTML = `Error, Please Try Again!!`
   }
   setTimeout(() => {
     formAlertDOM.style.display = 'none'
     formAlertDOM.classList.remove('text-success')
-  }, 3000)
+  }, 2000)
 })
