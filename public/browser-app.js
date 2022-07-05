@@ -3,7 +3,6 @@ const loadingDOM = document.querySelector('.loading-text')
 const formDOM = document.querySelector('.task-form')
 const taskInputDOM = document.querySelector('.task-input')
 const formAlertDOM = document.querySelector('.form-alert')
-// Load tasks from /api/tasks
 const showTasks = async () => {
   loadingDOM.style.visibility = 'visible'
   try {
@@ -22,10 +21,10 @@ const showTasks = async () => {
 <h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
 <div class="task-links">
 <a href="task.html?id=${taskID}"  class="edit-link">
-<i class="fas fa-edit"></i>
+<i class="fa-solid fa-gear"></i>
 </a>
 <button type="button" class="delete-btn" data-id="${taskID}">
-<i class="fas fa-trash"></i>
+<i class="fa-solid fa-ban"></i>
 </button>
 </div>
 </div>`

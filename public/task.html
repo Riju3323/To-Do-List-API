@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /> -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>Edit Task</title>
@@ -16,19 +16,19 @@
         <div class="form-control">
           <label>Task ID</label>
           <p class="task-edit-id"></p>
+        </div> 
+        <div class="form-control">
+          <label for="name">name </label>
+          <input type="text" name="name" class="task-edit-name"/>
         </div>
         <div class="form-control">
-          <label for="name">Name</label>
-          <input type="text" name="name" class="task-edit-name" />
-        </div>
-        <div class="form-control">
-          <label for="completed">completed</label>
+          <label for="completed">Completed: </label>
           <input type="checkbox" name="completed" class="task-edit-completed" />
         </div>
-        <button type="submit" class="block btn task-edit-btn">edit</button>
+        <button type="submit" class="block btn task-edit-btn">Edit</button>
         <div class="form-alert"></div>
       </form>
-      <a href="index.html" class="btn back-link">back to tasks</a>
+      <a href="index.html" class="btn back-link">Back to the List</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./edit-task.js"></script>

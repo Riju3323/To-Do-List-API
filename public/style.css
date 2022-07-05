@@ -377,7 +377,7 @@ form > :last-child {
 .delete-btn,
 .edit-link {
   background: transparent;
-  font-size: 0.75rem;
+  font-size: 1.25rem;
   border: transparent;
   cursor: pointer;
 }
@@ -420,10 +420,10 @@ form > :last-child {
   margin: 0 auto;
   text-align: center;
   margin-top: 6rem;
-  background: var(--black);
+  background: var(--primary-1000);
 }
 .back-link:hover {
-  background: var(--black);
+  background: var(--primary-1000);
   opacity: 0.75;
 }
 
